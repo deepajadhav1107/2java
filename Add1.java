@@ -6,24 +6,26 @@ class Animal {
 }
 
 // Derived class
-class Puppy extends Animal {
+class Dog extends Animal {
     void bark() {
         System.out.println("Dog barks");
     }
 }
-class Dog extends Puppy {
+
+class Puppy extends Dog {
     void make() {
-        System.out.println(" Puppy barks");
+        System.out.println("Puppy barks");
     }
 }
 
 // Main class to run the program
 public class Add1 {
     public static void main(String[] args) {
-        Dog dog = new Dog();
-        // Inherited method from Animal
-        dog.sound();
-        dog.bark();
-        dog.make();
+        Puppy puppy = new Puppy(); // use Puppy instead of Dog
+
+        // Inherited methods from Animal and Dog
+        puppy.sound();
+        puppy.bark();
+        puppy.make(); // now this works
     }
 }
